@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: "Update package index"
+    apt:
+      update_cache: yes
+
+  - name: "Install python3 package"
+    apt:
+      name: python3
+      state: latest
+
+  - name: "Install python is python3 package"
+    apt:
+      name: python-is-python3
+      state: latest
